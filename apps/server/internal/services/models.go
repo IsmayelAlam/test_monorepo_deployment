@@ -13,7 +13,7 @@ import (
 type Todo struct {
 	ID        uuid.UUID    `json:"id"`
 	Content   string       `json:"content"`
-	Completed sql.NullBool `json:"completed"`
+	Completed bool         `json:"completed"`
 	CreatedAt sql.NullTime `json:"created_at"`
 	UpdatedAt sql.NullTime `json:"updated_at"`
 }

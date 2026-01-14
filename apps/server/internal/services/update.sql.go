@@ -7,7 +7,6 @@ package services
 
 import (
 	"context"
-	"database/sql"
 
 	"github.com/google/uuid"
 )
@@ -22,8 +21,8 @@ WHERE
 `
 
 type UpdateTodoParams struct {
-	ID        uuid.UUID    `json:"id"`
-	Completed sql.NullBool `json:"completed"`
+	ID        uuid.UUID `json:"id"`
+	Completed bool      `json:"completed"`
 }
 
 func (q *Queries) UpdateTodo(ctx context.Context, arg UpdateTodoParams) error {

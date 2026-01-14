@@ -1,4 +1,4 @@
--- name: GetAllTodo :exec
+-- name: GetAllTodo :many
 SELECT
     *
 FROM
