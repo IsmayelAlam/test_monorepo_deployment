@@ -50,7 +50,6 @@ jobs:
         with:
           context: .
           file: ./apps/web/Dockerfile
-          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.WEB_IMAGE }}
           cache-from: type=gha
@@ -62,7 +61,6 @@ jobs:
         with:
           context: .
           file: ./apps/server/Dockerfile
-          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.SERVER_IMAGE }}
           cache-from: type=gha
