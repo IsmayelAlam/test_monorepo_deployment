@@ -20,6 +20,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Debug secrets
+        run: |
+          echo "API Key starts with: ${{ secrets.DOKPLOY_API_KEY }}"
+          echo "Web App ID: ${{ secrets.DOKPLOY_WEB_APP_ID }}"
+        env:
+          DOKPLOY_API_KEY: ${{ secrets.DOKPLOY_API_KEY }}
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
