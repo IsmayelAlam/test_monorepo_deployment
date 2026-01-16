@@ -17,7 +17,7 @@ func ConnectPostgresql(cfg config.DBConfig) (*sql.DB, error) {
 
 	db, err := sql.Open("pgx", dsn)
 	if err != nil {
-		// return nil, err
+		return nil, err
 	}
 
 	db.SetMaxOpenConns(cfg.MaxOpenConns)
