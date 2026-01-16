@@ -18,7 +18,7 @@ COPY --from=builder /app/main /main
 COPY apps/server/start.sh /start.sh
 
 # Make script executable
-RUN chmod +x /start.sh
+RUN chmod +x /main /start.sh
 
 EXPOSE 8080
 
