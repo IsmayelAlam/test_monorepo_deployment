@@ -23,4 +23,4 @@ RUN chmod +x /start.sh
 EXPOSE 8080
 
 # Run the script (not the binary directly)
-CMD ["/start.sh"]
+CMD ["main"]
