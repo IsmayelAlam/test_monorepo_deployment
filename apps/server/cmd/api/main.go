@@ -19,7 +19,8 @@ func main() {
 
 	db, err := database.ConnectPostgresql(cfg.DB)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		// panic(err)
 	}
 	defer db.Close()
 
