@@ -9,7 +9,7 @@ RUN go mod download
 COPY apps/server/ .
 
 # Build static binary
-RUN CGO_ENABLED=0 GOOS=linux go build -o main ./cmd/api
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main ./cmd/api
 
 # Final minimal image
 FROM alpine:latest
@@ -23,4 +23,4 @@ RUN chmod +x /start.sh
 EXPOSE 8080
 
 # Run the script (not the binary directly)
-CMD ["main"]
+CMD ["/start.sh"]
