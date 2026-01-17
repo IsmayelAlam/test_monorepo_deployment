@@ -21,15 +21,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Debug Backend_URL
-        run: |
-          if [ -z "$Backend_URL" ]; then
-            echo "❌ Backend_URL is EMPTY"
-            exit 1
-          else
-            echo "✅ Backend_URL is set"
-          fi
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:

@@ -31,6 +31,9 @@ RUN corepack enable pnpm
 
 WORKDIR /app
 
+# Set them as ENV so Next.js sees them during build
+ARG Backend_URL
+ENV Backend_URL=${Backend_URL}
 ENV NODE_ENV=production
 
 # Create non-root user
