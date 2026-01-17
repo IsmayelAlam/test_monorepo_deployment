@@ -8,7 +8,6 @@ on:
 env:
   WEB_IMAGE: ghcr.io/${{ github.repository_owner }}/myapp-web:${{ github.sha }}
   SERVER_IMAGE: ghcr.io/${{ github.repository_owner }}/myapp-server:${{ github.sha }}
-  Backend_URL: ${{ secrets.BACKEND_URL }}
 
 jobs:
   build-and-deploy:
@@ -77,6 +76,8 @@ jobs:
             ghcr.io/ismayelalam/myapp-server:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            Backend_URL=${{ env.BACKEND_URL }}
 
       - name: Deploy Web to Dokploy
         run: |
