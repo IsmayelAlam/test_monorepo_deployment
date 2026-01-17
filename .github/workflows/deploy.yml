@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Debug Backend_URL
+        run: echo "Backend_URL=$Backend_URL"
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
