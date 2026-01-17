@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { Card } from '@/components/ui/card';
+import Link from 'next/link';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,7 +29,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex items-center justify-center h-screen bg-accent-foreground">
+          <Card className="w-xl space-y-6">
+            <div className="flex items-center justify-center gap-4">
+              <Link href="/" className="hover:underline font-semibold">
+                Todo
+              </Link>
+              <Link href="/random" className="hover:underline font-semibold">
+                Random
+              </Link>
+            </div>
+            {children}
+          </Card>
+        </div>
       </body>
     </html>
   );

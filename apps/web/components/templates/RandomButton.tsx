@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Button } from '../ui/button';
 import { axiosCall } from '@/lib/api';
