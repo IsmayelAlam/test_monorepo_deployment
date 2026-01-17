@@ -1,5 +1,7 @@
 import type { NextConfig } from 'next';
-const API_URL = process.env.Backend_URL || 'http://localhost:8080';
+const API_URL =
+  process.env.Backend_URL ||
+  'http://test-server-gmj2pa-f148d3-129-154-47-181.traefik.me/';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
