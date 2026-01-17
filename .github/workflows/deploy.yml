@@ -60,7 +60,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            BACKEND_URL=${{ env.BACKEND_URL }}
+            NEXT_PUBLIC_BACKEND_URL=${{ env.BACKEND_URL }}
 
       # Build and push Go backend
       - name: Build and push server (Go)
