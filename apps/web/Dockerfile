@@ -13,6 +13,7 @@ WORKDIR /app
 
 # Copy root package files (required for pnpm install)
 COPY package.json pnpm-lock.yaml ./
+COPY apps/web/package.json ./apps/web/
 
 # Install all dependencies (monorepo-wide)
 RUN pnpm install --frozen-lockfile --recursive
