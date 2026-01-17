@@ -11,6 +11,10 @@ COPY package.json pnpm-lock.yaml ./
 # Install all dependencies (monorepo-wide)
 RUN pnpm install --frozen-lockfile
 
+# Set them as ENV so Next.js sees them during build
+ARG Backend_URL
+ENV Backend_URL=$Backend_URL
+
 # Copy entire source code
 COPY . .
 
@@ -19,9 +23,6 @@ RUN pnpm build
 
 # --- Production stage ---
 FROM node:20-alpine AS runner
-
-# Set them as ENV so Next.js sees them during build
-ENV Backend_URL=${{Backend_URL}}
 
 # Enable pnpm (optional, but good practice)
 RUN corepack enable pnpm
