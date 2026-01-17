@@ -26,8 +26,6 @@ services:
       dockerfile: ./apps/server/Dockerfile
     ports:
       - '8080:8080'
-    env_file:
-      - ./apps/server/.env
     working_dir: /app
     depends_on:
       postgres:
@@ -39,6 +37,4 @@ services:
       dockerfile: ./apps/web/Dockerfile
     ports:
       - '3000:3000'
-    env_file:
-      - ./apps/web/.env
     working_dir: /app
