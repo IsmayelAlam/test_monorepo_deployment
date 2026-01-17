@@ -31,9 +31,9 @@ export default function TodoApp() {
         <CardContent className="space-y-4">
           <RandomButton />
           <NewTodo refetch={() => setRefetch((v) => !v)} />
-          <p>test: {process.env.test}</p>
+          <p>TEST: {process.env.TEST}</p>
           <p>Backend_URL: {process.env.Backend_URL}</p>
-          <p>NEXT_PUBLIC_test: {process.env.NEXT_PUBLIC_test}</p>
+          <p>NEXT_PUBLIC_TEST: {process.env.NEXT_PUBLIC_TEST}</p>
           <p>NEXT_PUBLIC_Backend_URL: {process.env.NEXT_PUBLIC_Backend_URL}</p>
 
           <ul>
