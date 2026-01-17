@@ -4,8 +4,6 @@ FROM --platform=$BUILDPLATFORM node:20-alpine AS base
 ARG Backend_URL
 ENV Backend_URL=${Backend_URL}
 
-RUN echo "Backend_URL=$Backend_URL"
-
 # Enable corepack to use pnpm without global install
 RUN corepack enable pnpm
 
