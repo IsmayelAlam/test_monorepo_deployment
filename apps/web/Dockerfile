@@ -2,7 +2,16 @@ FROM --platform=$BUILDPLATFORM node:24-alpine AS base
 
 # Set them as ENV so Next.js sees them during build
 ARG Backend_URL
+ARG NEXT_PUBLIC_Backend_URL
+ARG test
+ARG NEXT_PUBLIC_test
+
 ENV Backend_URL=${Backend_URL}
+ENV NEXT_PUBLIC_Backend_URL=${NEXT_PUBLIC_Backend_URL}
+ENV test=${test}
+ENV NEXT_PUBLIC_test=${NEXT_PUBLIC_test}
+ENV NODE_ENV=production
+
 
 RUN echo "Backend_URL=$Backend_URL"
 
@@ -30,11 +39,6 @@ FROM node:24-alpine AS runner
 RUN corepack enable pnpm
 
 WORKDIR /app
-
-# Set them as ENV so Next.js sees them during build
-ARG Backend_URL
-ENV Backend_URL=${Backend_URL}
-ENV NODE_ENV=production
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && adduser -S nextJS -u 1001

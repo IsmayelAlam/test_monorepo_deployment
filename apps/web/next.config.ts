@@ -1,5 +1,5 @@
 import type { NextConfig } from 'next';
-const API_URL = process.env.Backend_URL || 'http://localhost:8080';
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 const nextConfig: NextConfig = {
   output: 'standalone',
