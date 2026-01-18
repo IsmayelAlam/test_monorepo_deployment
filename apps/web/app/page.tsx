@@ -1,9 +1,8 @@
 'use client';
 
 import { NewTodo } from '@/components/templates/NewTodo';
-import RandomButton from '@/components/templates/RandomButton';
 import TodoItem from '@/components/templates/TodoItem';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { CardContent, CardHeader } from '@/components/ui/card';
 import { axiosCall } from '@/lib/api';
 import { Todo } from '@/types/todo';
 import { useEffect, useState } from 'react';

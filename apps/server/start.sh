@@ -1,7 +1,5 @@
 #!/bin/sh
 
-goose up --dir ./migrations 
-
 exec /main \
   -db-host="${DB_HOST}" \
   -db-port="${DB_PORT}" \
